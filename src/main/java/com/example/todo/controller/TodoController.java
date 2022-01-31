@@ -48,6 +48,13 @@ public class TodoController {
 	public Optional<UserModel> getSingleUser(@ApiParam("Provide the unique user ID")@PathVariable String userID){
 		return this.todoService.getUser(userID);
 	}
+
+	@ApiOperation("Use this method to get single user details")
+	@GetMapping("/test")
+	/*http://localhost:8082/todoApp/user/5e650f1d7a2d7b6344806690*/
+	public String test(){
+		return "this is a test message";
+	}
 	
 	@ApiOperation("Use this method to delete a user from this application")
 	@DeleteMapping("/deleteUser/{userID}")
